@@ -24,12 +24,12 @@ done
 cd $build_dir
 mkdir -p python
 cd python
-release_url="https://api.github.com/repos/niess/python-appimage/releases/tags/python3.8"
+release_url="https://api.github.com/repos/niess/python-appimage/releases/tags/python3.10"
 download_url=`curl -s "$release_url" | grep "browser_download_url" | grep -wo 'https.*manylinux2010_x86_64[^"]*' | head -n 1`
-curl -s -o python3.8 -L "$download_url"
-chmod +x python3.8
-ln -s python3.8 python
-ln -s python3.8 python3
+curl -s -o python3.10 -L "$download_url"
+chmod +x python3.10
+ln -s python3.10 python
+ln -s python3.10 python3
 
 cp ../../pip .
 ln -s pip pip3
